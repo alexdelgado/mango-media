@@ -1,0 +1,204 @@
+.featured-work {
+	margin-top: 130px;
+
+	&__title {
+		font-size: 36px;
+		line-height: 40px;
+		margin-left: -5px;
+		position: relative;
+		width: 200px;
+		z-index: 1;
+	}
+
+	.work {
+		position: relative;
+
+		&::before {
+			background-position: top right;
+			background-repeat: no-repeat;
+			content: '';
+			position: absolute;
+			top: 0;
+		}
+
+		&__container {
+			background: $color-white;
+			display: flex;
+			flex-wrap: wrap;
+			max-width: 1250px;
+			padding: 30px 15px;
+			position: relative;
+			width: calc(100% - 20px);
+		}
+
+		&__column {
+			&:nth-child(3) {
+				width: 100%;
+			}
+		}
+
+		&__screenshots {
+			max-width: 100%;
+		}
+
+		&__permalink {
+			align-items: center;
+			color: $body-color;
+			display: flex;
+			font-family: $font-family-serif;
+			font-size: 1.125rem;
+			line-height: 28px;
+			margin-top: 30px;
+			max-width: 165px;
+
+			&::after {
+				background: url('../../img/angle-right.min.svg') center left no-repeat;
+				content: '';
+				height: 20px;
+				margin-left: 15px;
+				width: 10px;
+			}
+		}
+
+		&:nth-of-type(1) {
+			margin-top: -40px;
+
+			&::before {
+				background-image: url('../../img/mango-work-one.min.svg');
+				height: 170px;
+				right: 0;
+				top: -105px;
+				width: 130px;
+				z-index: 1;
+			}
+
+			.work {
+				&__container {
+					padding-top: 65px;
+				}
+			}
+		}
+
+		&:nth-of-type(2) {
+			margin-top: 115px;
+			padding: 0;
+
+			&::before {
+				background-image: url('../../img/mango-work-two.min.svg');
+				height: 285px;
+				left: 0;
+				top: -95px;
+				width: 195px;
+				z-index: 0;
+			}
+
+			.work {
+				&__container {
+					background: $color-white;
+					padding: 30px 15px 25px;
+					position: relative;
+					z-index: 1;
+				}
+			}
+		}
+
+		&:nth-of-type(3) {
+			margin-top: 90px;
+
+			.work {
+				&__container {
+					&::before {
+						background-image: url('../../img/mango-work-three.min.svg');
+						height: 270px;
+						right: 40px;
+						top: -70px;
+						width: 250px;
+						z-index: -1;
+					}
+				}
+			}
+		}
+	}
+
+	@include respond-to('lg') {
+		&__title {
+			font-size: 45px;
+			line-height: 60px;
+			margin-left: 70px;
+			width: auto;
+		}
+
+		.work {
+			&__column {
+				&:nth-of-type(1) {
+					margin-right: 110px;
+					width: 350px;
+				}
+
+				&:nth-child(2) {
+					width: calc(100% - 460px);
+
+					&:before {
+						height: 490px;
+						width: 645px;
+					}
+				}
+			}
+
+			&:nth-of-type(1) {
+				margin-top: -30px;
+
+				&::before {
+					background-image: url('../../img/mango-work-one.lg.min.svg');
+					height: 575px;
+					top: -500px;
+					width: 450px;
+				}
+
+				.work {
+					&__container {
+						padding: 60px 70px 40px;
+					}
+				}
+			}
+
+			&:nth-of-type(2) {
+				&::before {
+					background-image: url('../../img/mango-work-two.lg.min.svg');
+					background-position: top left;
+					height: 575px;
+					top: -95px;
+					width: 450px;
+				}
+
+				.work {
+					&__container {
+						padding: 60px 70px 40px;
+					}
+				}
+			}
+
+			&:nth-of-type(3) {
+				.work {
+					&__container {
+						padding: 60px 70px 40px;
+
+						&::before {
+							background-image: url('../../img/mango-work-three.lg.min.svg');
+							height: 540px;
+							right: 100px;
+							top: -250px;
+							width: 525px;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	@include respond-to('xl') {
+		&__container {
+			max-width: 1250px;
+		}
+	}
+}

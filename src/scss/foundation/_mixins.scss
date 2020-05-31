@@ -1,0 +1,28 @@
+@mixin container() {
+	padding-left: 30px;
+	padding-right: 30px;
+	margin: 0 auto;
+	max-width: 1120px;
+	width: 100%;
+
+	@include respond-to('xl') {
+		padding-left: 0;
+		padding-right: 0;
+	}
+}
+
+@mixin respond-to($breakpoint) {
+
+	@if map-has-key($grid-breakpoints, $breakpoint) {
+		// Prints a media query based on the value
+		@media (min-width: map-get($grid-breakpoints, $breakpoint)) {
+			@content;
+		}
+	}
+
+	  // If the key doesn't exist in the map
+	@else {
+		@warn "Unfortunately, no value could be retrieved from `#{$breakpoint}`. "
+			+ "Available breakpoints are: #{map-keys($grid-breakpoints)}.";
+	}
+}

@@ -1,0 +1,142 @@
+@keyframes slide-in {
+    100% { transform: translateX(0%); }
+}
+
+@keyframes slide-out {
+    0% { transform: translateX(0%); }
+    100% { transform: translateX(-100%); }
+}
+
+.nav {
+	position: relative;
+	z-index: 10;
+
+	&__container {
+		align-items: center;
+		display: flex;
+		justify-content: center;
+		padding: 30px;
+	}
+
+	&__column {
+		&:nth-child(n+2) {
+			flex: 1;
+		}
+
+		&:nth-child(2) {
+			display: none;
+		}
+
+		&:nth-child(3) {
+			display: flex;
+			justify-content: flex-end;
+		}
+
+		&.slide-in {
+			animation: slide-in 0.5s forwards;
+			display: block;
+		}
+
+		&.slide-out {
+			animation: slide-out 0.5s forwards;
+		}
+	}
+
+	&__logo {
+		font-size: 16.5px;
+		font-weight: 600;
+		letter-spacing: 2px;
+		line-height: 21px;
+		margin: 0;
+		text-transform: uppercase;
+	}
+
+	&__menu {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+	}
+
+	&__toggle {
+		border: none;
+		display: flex;
+		padding: 0;
+
+		&::before {
+			background: url('../../img/menu.min.svg') center center no-repeat;
+			content: '';
+			height: 24px;
+			width: 24px;
+		}
+	}
+
+	@media (max-width: 991px) {
+		&__column {
+			&:nth-child(2) {
+				background: $body-bg;
+				box-shadow: 1px 1px 15px 0px rgba(0,0,0,0.5);
+				height: 100vh;
+				left: 0;
+				padding: 30px 30px;
+				position: absolute;
+				top: 0;
+				transform: translateX(-100%);
+				width: calc(100% - 84px);
+			}
+
+			.nav {
+				&__menu-item {
+					margin-bottom: 15px;
+				}
+
+				&__menu-link {
+					font-size: 18px;
+				}
+			}
+		}
+	}
+
+	@include respond-to('lg') {
+		&__column {
+			&:nth-child(2) {
+				align-items: center;
+				display: flex;
+				justify-content: flex-end;
+			}
+
+			&:nth-child(3) {
+				display: none;
+			}
+		}
+
+		&__menu {
+			display: flex;
+		}
+
+		&__menu-item {
+			&:nth-child(n+2) {
+				margin-left: 40px;
+			}
+		}
+
+		&__menu-link {
+			border-radius: 6px;
+			color: $body-color;
+			display: inline-block;
+			padding: 15px;
+
+			&:hover {
+				background: $nav-link-background;
+				color: $body-color;
+				text-decoration: none;
+			}
+		}
+	}
+
+	@include respond-to('xl') {
+		&__container {
+			padding-left: 0;
+			padding-right: 0;
+		}
+	}
+}

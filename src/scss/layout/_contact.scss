@@ -1,0 +1,57 @@
+.contact {
+	background: $color-white;
+	margin-top: 100px;
+	position: relative;
+
+	&::before {
+		background: url('../../img/mango-contact.min.svg') top left no-repeat;
+		content: '';
+		height: 120px;
+		position: absolute;
+		width: 50px;
+	}
+
+	&__container {
+		padding-top: 110px;
+		position: relative;
+	}
+
+	&__heading {
+		font-family: $font-family-serif;
+		font-size: 40px;
+		font-weight: 400;
+		line-height: 60px;
+		margin: 0;
+	}
+
+	&__title {
+		font-size: 24px;
+		color: $body-color;
+		line-height: 28px;
+	}
+
+	@include respond-to('lg') {
+		&::before {
+			background-image: url('../../img/mango-contact.lg.min.svg');
+			height: 335px;
+			width: 165px;
+		}
+
+		&__header {
+			margin: 0 0 0 auto;
+			max-width: 540px;
+		}
+	}
+
+	@include respond-to('xl') {
+		&__header {
+			margin: 0;
+		}
+	}
+
+	@media (min-width: 1200px) and (max-width: 1439px) {
+		&__header {
+			margin-left: calc(165px - ((100vw - 100%) / 2));
+		}
+	}
+}

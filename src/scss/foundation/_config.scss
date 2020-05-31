@@ -1,0 +1,41 @@
+// -------------------------------------
+//   Colors
+// -------------------------------------
+$color-black: #000;
+$color-egg-shell: #EDECE3;
+$color-orange: #D17407;
+$color-orange-darker: #C66E06;
+$color-white: #FFF;
+
+
+// -------------------------------------
+//   Grid
+// -------------------------------------
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1440px
+);
+
+
+// -------------------------------------
+//   Layout
+// -------------------------------------
+$body-bg: #ECECE2;
+$body-color: #353434;
+
+
+// -------------------------------------
+//   Navigation
+// -------------------------------------
+$nav-link-background: rgba(152, 155, 76, .5);
+
+
+// -------------------------------------
+//   Typography
+// -------------------------------------
+$font-family-sans-serif: 'Montserrat', sans-serif;
+$font-family-serif: 'DM Serif Display', serif;

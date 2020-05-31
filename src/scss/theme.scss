@@ -1,0 +1,40 @@
+// -------------------------------------
+//   Layout
+// -------------------------------------
+
+// Required
+@import '../../node_modules/bootstrap/scss/functions';
+@import '../../node_modules/bootstrap/scss/variables';
+@import '../../node_modules/bootstrap/scss/mixins';
+@import '../../node_modules/bootstrap/scss/reboot';
+@import '../../node_modules/bootstrap/scss/utilities/screenreaders';
+
+
+// -------------------------------------
+//   Foundation
+// -------------------------------------
+@import 'foundation/config';
+@import 'foundation/mixins';
+@import 'foundation/reset';
+@import 'foundation/typography';
+
+
+// -------------------------------------
+//   Components
+// -------------------------------------
+@import 'components/buttons';
+@import 'components/grid';
+
+
+// -------------------------------------
+//   Layout
+// -------------------------------------
+@import 'layout/contact';
+@import 'layout/featured-work';
+@import 'layout/footer';
+@import 'layout/form';
+@import 'layout/header';
+@import 'layout/nav';
+@import 'layout/services';
+@import 'layout/team';
+

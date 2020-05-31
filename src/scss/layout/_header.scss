@@ -1,0 +1,62 @@
+.header {
+	position: relative;
+
+	&::before {
+		background: url('../../img/mango-header.min.svg') top right no-repeat;
+		bottom: -130px;
+		content: '';
+		height: 225px;
+		position: absolute;
+		right: 0;
+		width: 130px;
+		z-index: 0;
+	}
+
+	&__container {
+		position: relative;
+	}
+
+	&__title {
+		font-family: $font-family-serif;
+		font-size: 30px;
+		font-weight: 400;
+		line-height: 1.5em;
+		margin: 0;
+	}
+
+	&__btn {
+		margin-top: 35px;
+	}
+
+	@include respond-to('lg') {
+		margin-top: 50px;
+
+		&::before {
+			background-image: url('../../img/mango-header.lg.min.svg');
+			height: 600px;
+			top: -165px;
+			width: 460px;
+		}
+
+		&__column {
+			margin-left: 0;
+			width: calc(100% - 460px);
+		}
+
+		&__title {
+			font-size: 40px;
+			line-height: 1.25em;
+		}
+	}
+
+	@include respond-to('xxl') {
+		&__column {
+			width: 825px;
+		}
+
+		&__title {
+			font-size: 56px;
+			line-height: 1.125em;
+		}
+	}
+}

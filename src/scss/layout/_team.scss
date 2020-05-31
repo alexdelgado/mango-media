@@ -1,0 +1,74 @@
+.team {
+	margin-top: 215px;
+
+	&__container {
+		display: flex;
+		flex-wrap: wrap;
+	}
+
+	&__column {
+		&:nth-child(1) {
+			flex: 1;
+			order: 2;
+			text-align: right;
+
+			&::before {
+				background: url('../../img/digital-nomad-seal.min.svg') top right no-repeat;
+				content: '';
+				display: block;
+				height: 180px;
+				margin: 45px 0 0 auto;
+				width: 180px;
+			}
+		}
+
+		p {
+			&:last-child {
+				margin-bottom: 0;
+			}
+		}
+	}
+
+	@include respond-to('lg') {
+		margin-top: 120px;
+
+		&__container {
+			align-items: center;
+			flex-wrap: nowrap;
+		}
+
+		&__column {
+			&:nth-child(1) {
+				flex-basis: 30%;
+				order: 1;
+				text-align: left;
+
+				svg {
+					height: 350px;
+					margin-right: 100px;
+				}
+			}
+
+			&:nth-child(2) {
+				flex-basis: 70%;
+				order: 2;
+				max-width: 635px;
+			}
+		}
+	}
+
+	@include respond-to('xxl') {
+		&__column {
+			&:nth-child(1) {
+				margin-left: -80px;
+
+				&::before {
+					background-position: top left;
+					height: 450px;
+					margin: 0 110px 0 0;
+					width: 450px;
+				}
+			}
+		}
+	}
+}

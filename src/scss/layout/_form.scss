@@ -1,0 +1,52 @@
+.form {
+	background: none;
+	display: flex;
+	flex-wrap: wrap;
+	margin-top: 60px;
+	position: relative;
+	z-index: 1;
+
+	&__input {
+		background: none;
+		border: none;
+		border-bottom: 1px solid #979797;
+		color: $color-black;
+		flex: 1 1 100%;
+		font-size: 21px;
+		line-height: 28px;
+		padding-bottom: 18px;
+
+		&::placeholder {
+			color: $color-black;
+			line-height: 28px;
+		}
+
+		&:nth-child(n+2) {
+			margin-top: 95px;
+		}
+	}
+
+	&__hidden {
+		display: none;
+	}
+
+	&__submit {
+		border: none;
+		color: $color-egg-shell;
+		font-size: 20px;
+		letter-spacing: 0.12px;
+		line-height: 30px;
+		margin-top: 55px;
+		text-align: center;
+		width: 100%;
+	}
+
+	@include respond-to('lg') {
+		margin: 50px 0 0 auto;
+		max-width: 540px;
+
+		&__submit {
+			width: auto;
+		}
+	}
+}
